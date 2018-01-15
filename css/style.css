@@ -6,12 +6,81 @@ body {
     padding: 3rem 1.5rem;
     text-align: center;
 }
+.navbar-style {
+    background-color: darkslategrey !important;
+}
 
-
+.form-search {
+    padding-right: 30px !important;
+}
 /*==Footer==*/
 #footer {
  font-size: 85%;
  border-top: 1px solid #E6E6E6;
  color: #838383;
  padding: 1em 3em;
+ text-align: center;
+}
+.branding {
+    position: relative;
+    display: inline;
+    clear: none;
+    float: left;
+    box-sizing: border-box;
+        margin-left: 0;
+    margin-right: 0;
+    
+}
+.row {
+ overflow: auto;
+ margin: 1.5em auto;
+}
+.row .col {
+ float: left;
+ width: 25%;
+ margin-right: 2.99%;
+}
+.row .col:last-child {
+ float: right;
+ margin-right: 0;
+}
+.row .col .subject-title {
+    text-align: center;
+}
+.subject-img {
+    height: 120px;
+    width: 100%
+}
+#content {
+    padding: 25px 50px 25px 50px;
+}
+.grid-container {
+    display: grid;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+    background-color: #ffffff;
+    padding: 10px;
+}
+.subject-list {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.subject-a:hover {
+    text-decoration: none;
+}
+.subject-a {
+    background-image: url(../element/Mathslabelled.jpg);
+    justify-content: center;
+    height: 120px;
+    padding: 20px 20px;
+    margin-bottom: 0;
+    border-radius: 8px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 600;
 }

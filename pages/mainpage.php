@@ -18,7 +18,7 @@
 
 
 <body>
-
+    <?php include '../connect.php';?>
     <?php include 'navigation.php';?>
     <div id="container">
         <div id="menu">
@@ -31,9 +31,17 @@
             <div class="call-to-action">
             </div><!--.call-to-action-->
             <div class="row">
-                    <div id="box1" class="col"></div>
-                    <div id="box2" class="col"></div>
-                    <div id="box3" class="col"></div>
+               <?php 
+                $sql_list_subject = "SELECT name FROM subject";
+                $result = mysqli_query($conn,$sql_list_subject);
+                while($row = mysqli_fetch_assoc($result)){
+                    echo '<div class="col-md-3 subject-list">
+                            <a class="subject-a" href="#">'. $row['name'] . '
+                            </a>
+                        </div>';
+                }
+                mysqli_close($conn);
+                ?>
             </div>
         </div><!--#content-->
         <div id="footer">
