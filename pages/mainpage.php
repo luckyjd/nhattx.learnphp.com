@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>Nhattx1</title>
+    <title>Home</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -20,16 +20,7 @@
 <body>
     <?php include '../connect.php';?>
     <?php include 'navigation.php';?>
-    <div id="container">
-        <div id="menu">
-        </div><!--#menu-->
-        <div id="content">
-            <div id="header">
-                <div id="logo"></div>
-                <div id="slogan"></div>
-            </div><!--#header-->
-            <div class="call-to-action">
-            </div><!--.call-to-action-->
+    <div class="pg-container">
             <div class="row">
                <?php 
                 $sql_list_subject = "SELECT name FROM subject LIMIT 5";
@@ -42,11 +33,11 @@
                 }
                 mysqli_close($conn);
                 ?>
+            
             </div>
-        </div><!--#content-->
-        <div id="footer">
-            <p>nhattx.learnphp.tinhvan.com - Test Footer site</p>
-        </div><!--#footer-->
+            <div><a href="#">Show all Subject >></a></div>
+        
+        <?php include 'footer.html';?>
  
     </div><!--#container-->
     <!-- /.container -->

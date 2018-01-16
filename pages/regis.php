@@ -8,7 +8,7 @@
         <meta name="author" content="">
         <link rel="icon" href="">
 
-        <title>Login</title>
+        <title>Registation</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -33,12 +33,13 @@
                     <td></td>
                     <td>
                         <input type='hidden' id='secret_key' value='mysecretkey'>
-                        <button type="button" onclick="loadDoc()">Login</button>
+                        <button type="button" onclick="loadDoc()">Registation</button>
                         <input type="reset" name="submit" value="Clear"/>
                     </td>
                 </tr>
             </table>
         </form>
+        
         <div id="showerror"></div>
         </div>
         <script language="javascript">
@@ -68,7 +69,7 @@
                    document.getElementById("showerror").innerHTML = this.responseText;
                   }
                 };
-                xhttp.open("POST", "http://simple.sso.tinhvan.com/login.php", true);
+                xhttp.open("POST", "http://simple.sso.tinhvan.com/regis.php", true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.send(str_send);
               }

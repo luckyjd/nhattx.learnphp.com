@@ -41,7 +41,7 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
             <button onclick="location.href = 'http://nhattx.learnphp.tinhvan.com/pages/login.php';" type="button" class="btn btn-default btn-xs">Login</button>
-            <button type="button" class="btn btn-primary btn-xs">Register</button>
+            <button onclick="location.href = 'http://nhattx.learnphp.tinhvan.com/pages/regis.php';" type="button" class="btn btn-primary btn-xs">Register</button>
           </ul>
     </div>
 </nav>

@@ -73,3 +73,11 @@ body {
     font-size: 1.25em;
     font-weight: 600;
 }
+.fmt-form {
+    display: inline-block;
+    text-align: center;
+}
+.pg-container{
+    text-align: center;
+    padding: 25px 50px 25px 50px;
+}
