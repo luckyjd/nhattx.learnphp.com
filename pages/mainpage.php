@@ -32,7 +32,7 @@
             </div><!--.call-to-action-->
             <div class="row">
                <?php 
-                $sql_list_subject = "SELECT name FROM subject";
+                $sql_list_subject = "SELECT name FROM subject LIMIT 5";
                 $result = mysqli_query($conn,$sql_list_subject);
                 while($row = mysqli_fetch_assoc($result)){
                     echo '<div class="col-md-3 subject-list">
