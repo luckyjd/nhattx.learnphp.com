@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title> Site registration</title>
+    <?php header("Access-Control-Allow-Origin: *"); ?>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/plain; charset=UTF-8">
+        <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
     </head>
     <body>
-        <h1>Registration on LEARNPHP</h1>
-        <?php
-        if ($_POST['error'] == 'pass'){
-            echo "Success regis <br>";
-            echo "Go to <a href='login.php'>Login page </a>";
-        } else {
-            echo $_POST['error'] . '<br>';
-            echo "
-            <form action='http://simple.sso.tinhvan.com/regis.php' method='POST'>
-                <table cellpadding='0' cellspacing='0' border='1'>
-                    <tr>
-                        <td>
-                            Username : 
-                        </td>
-                        <td>
-                            <input type='text' name='username' size='50' />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Password :
-                        </td>
-                        <td>
-                            <input type='password' name='password' size='50' />
-                        </td>
-                        
-                    </tr>
-                </table>
-                <input type='hidden' name='url_handle' value='http://nhattx.learnphp.tinhvan.com/regis.php'>
-                <input type='hidden' name='secret_key' value='mysecretkey'>
-                <input type='submit' value='Submit' />
-                <input type='reset' value='Reset' />
-            </form> ";
-        }
-        ?>
+        <form method="post" action="">
+            <table border="0" cellpadding="10" cellspacing="0">
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" id="username" name="username" value=""/></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="password" name="password" value=""/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type='hidden' id='secret_key' value='mysecretkey'>
+                        <button type="button" onclick="loadDoc()">Registation</button>
+                        <input type="reset" name="submit" value="Clear"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="showerror">BBBBBB</div>
+        <script language="javascript">
+            function loadDoc() {
+                $('#showerror').html('');
+ 
+                var username = $('#username').val();
+                var password = $('#password').val();
+
+                // Kiểm tra dữ liệu có null hay không
+                if ($.trim(username) == ''){
+                    alert('Please enter your username.');
+                    return false;
+                }
+
+                if ($.trim(password) == ''){
+                    alert('Please enter your password');
+                    return false;
+                }
+                
+                str_send = "";
+                str_send += "username=" + username + "&" + "password=" + password;
+                str_send += "&" + "secret_key=" + $('#secret_key').val();
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                   document.getElementById("showerror").innerHTML = this.responseText;
+                  }
+                };
+                xhttp.open("POST", "http://simple.sso.tinhvan.com/regis.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send(str_send);
+              }
+        </script>
     </body>
 </html>

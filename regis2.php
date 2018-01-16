@@ -55,7 +55,7 @@
                    document.getElementById("showerror").innerHTML = this.responseText;
                   }
                 };
-                xhttp.open("POST", "http://nhattx.sso.com/regis.php", true);
+                xhttp.open("POST", "http://simple.sso.tinhvan.com/regis.php", true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.send(str_send);
               }
