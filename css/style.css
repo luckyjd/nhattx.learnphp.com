@@ -35,18 +35,7 @@ body {
  overflow: auto;
  margin: 1.5em auto;
 }
-.row .col {
- float: left;
- width: 25%;
- margin-right: 2.99%;
-}
-.row .col:last-child {
- float: right;
- margin-right: 0;
-}
-.row .col .subject-title {
-    text-align: center;
-}
+
 .subject-img {
     height: 120px;
     width: 100%
