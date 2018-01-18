@@ -1,7 +1,8 @@
 <?php include '../connect.php';?>
+<?php session_start(); ?>
 <nav class="navbar-style navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
 
-       <a class="navbar-brand" href=#>
+    <a class="navbar-brand" href=#>
         <img class="site-logo image-style-none" itemprop="logo" typeof="foaf:Image" src="../element/edx-logo-header.png" alt="edX Home Page"> EDX
         </a>
 
@@ -23,7 +24,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Course</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                   <?php 
+                    <?php 
                         $sql_list_subject = "SELECT name FROM subject";
                         $result = mysqli_query($conn,$sql_list_subject);
                         while($row = mysqli_fetch_assoc($result)){
@@ -39,9 +40,36 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <ul class="nav navbar-nav navbar-right">
-            <button onclick="location.href = 'http://nhattx.learnphp.tinhvan.com/pages/login.php';" type="button" class="btn btn-default btn-xs">Login</button>
-            <button onclick="location.href = 'http://nhattx.learnphp.tinhvan.com/pages/regis.php';" type="button" class="btn btn-primary btn-xs">Register</button>
-          </ul>
+        <?php 
+        
+        // if no token in session 
+        if (empty($_SESSION['token'])) { 
+                // if no token in both session and post
+                if (!isset($_POST['token'])) { 
+        ?>
+            <ul class="nav navbar-nav navbar-right">
+                <button onclick="location.href = 'http://nhattx.learnphp.tinhvan.com/pages/login.php';" type="button" class="btn btn-default btn-xs">Login</button>
+                <button onclick="location.href = 'http://nhattx.learnphp.tinhvan.com/pages/regis.php';" type="button" class="btn btn-primary btn-xs">Register</button>
+            </ul>
+        <?php 
+                // have token in post but not in session
+                } else { 
+                    $_SESSION['name'] = "test";
+                    $_SESSION['token'] = $_POST['token'];
+        ?>
+            <ul class="nav navbar-nav navbar-right">
+                <button onclick="location.href = '#';" type="button" class="btn btn-info btn-xs"><?php echo $_SESSION['name']; ?></button>
+                <button onclick="location.href = '#';" type="button" class="btn btn-warning btn-xs">Logout</button>
+            </ul>
+        <?php 
+                // have token in session not in post
+                }} else { ?>
+            <ul class="nav navbar-nav navbar-right">
+                <button onclick="location.href = '#';" type="button" class="btn btn-info btn-xs"><?php echo $_SESSION['name']; ?></button>
+                <button onclick="location.href = '#';" type="button" class="btn btn-warning btn-xs">Logout</button>
+            </ul>
+        <?php } ?>
+        
+
     </div>
 </nav>

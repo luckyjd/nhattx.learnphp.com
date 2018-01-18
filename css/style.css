@@ -81,3 +81,24 @@ body {
     text-align: center;
     padding: 25px 50px 25px 50px;
 }
+.course-list {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.course-a {
+    background-image: url(../element/cloudcomputing-course1image-378x225.jpg);
+    justify-content: center;
+    height: 120px;
+    padding: 20px 20px;
+    margin-bottom: 0;
+    border-radius: 8px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+.course-a:hover {
+    text-decoration: none;

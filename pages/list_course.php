@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>Home</title>
+    <title>Course</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -19,29 +19,19 @@
 
 
 <body>
-    <?php include '../connect.php';?>
-
     <?php include '../include/navigation.php';?>
-
     <div class="pg-container">
         <div class="row">
-            <?php 
-                $sql_list_subject = "SELECT id, name FROM subject LIMIT 5";
-                $result = mysqli_query($conn,$sql_list_subject);
-                while($row = mysqli_fetch_assoc($result)){
-                    echo '<div class="col-md-3 subject-list">
-                            <a class="subject-a" href="list_course.php?q='. $row['id'] . '">'. $row['name'] . '
-                            </a>
-                        </div>';
+            <?php
+                $sql = "Select * from course";
+                if (isset($_GET['q']) ) {
+                    $sql = "SELECT * from course where subject_id=" . $_GET['q'] . ";";
                 }
-                mysqli_close($conn);
+                include '../include/courses.php';
+                list_course($sql);
             ?>
-
         </div>
-        <div><a href="#">Show all Subject >></a></div>
         <?php include '../include/footer.html';?>
-
-
     </div>
     <!--#container-->
     <!-- /.container -->
