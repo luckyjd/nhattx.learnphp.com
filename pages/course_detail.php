@@ -19,23 +19,11 @@
 
 
 <body>
-    <?php include '../include/navigation.php';?>
+    
     <div class="pg-container">
-       <form class="form-search form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button style="text-align: right;" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <div class="row">
-            <?php
-                $sql = "Select * from course";
-                if (isset($_GET['q']) ) {
-                    $sql = "SELECT * from course where subject_id=" . $_GET['q'] . ";";
-                }
-                include '../include/courses.php';
-                list_course($sql);
-            ?>
-        </div>
-        <?php include '../include/footer.html';?>
+    <?php include '../include/navigation.php';?>
+    <?php echo "course detail id = " . $_GET['q']; ?>
+    <?php include '../include/footer.html';?>
     </div>
     <!--#container-->
     <!-- /.container -->

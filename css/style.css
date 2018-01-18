@@ -11,15 +11,18 @@ body {
 }
 
 .form-search {
-    padding-right: 30px !important;
+    display: inline-block;
+    padding-right: 15px;
 }
 /*==Footer==*/
 #footer {
- font-size: 85%;
- border-top: 1px solid #E6E6E6;
- color: #838383;
- padding: 1em 3em;
- text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: darkslategrey;
+    color: white;
+    text-align: center;
 }
 .branding {
     position: relative;
@@ -78,7 +81,7 @@ body {
     text-align: center;
 }
 .pg-container{
-    text-align: center;
+    text-align: right;
     padding: 25px 50px 25px 50px;
 }
 .course-list {
