@@ -9,8 +9,10 @@ body {
 .navbar-style {
     background-color: darkslategrey !important;
 }
-
-.form-search {
+.div-search {
+    text-align: right;
+}
+.div-search form{
     display: inline-block;
     padding-right: 15px;
 }
@@ -30,7 +32,7 @@ body {
     clear: none;
     float: left;
     box-sizing: border-box;
-        margin-left: 0;
+    margin-left: 0;
     margin-right: 0;
     
 }
@@ -45,14 +47,6 @@ body {
 }
 #content {
     padding: 25px 50px 25px 50px;
-}
-.grid-container {
-    display: grid;
-    grid-column-gap: 25px;
-    grid-row-gap: 25px;
-    grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
-    background-color: #ffffff;
-    padding: 10px;
 }
 .subject-list {
     padding-top: 10px;
@@ -81,7 +75,7 @@ body {
     text-align: center;
 }
 .pg-container{
-    text-align: right;
+    text-align: center;
     padding: 25px 50px 25px 50px;
 }
 .course-list {
@@ -105,3 +99,49 @@ body {
 }
 .course-a:hover {
     text-decoration: none;
+}
+/*===Course detail===*/
+.pg-content {
+    margin-bottom: 24px;
+    background: #fff;
+    border-bottom: 1px solid #cacaca;
+    padding : 20px 0;
+    position: relative;
+    display: block;
+    overflow: auto;
+}
+
+.pg-head-left-content {
+    display: block;
+    float: left;
+}
+
+    .pg-head-left-content .img-des {
+        display: block;
+        float:left;
+    }
+
+        .pg-head-left-content .img-des img{
+            float: left;
+            height: auto;
+            width: 100%;
+        }
+
+    .pg-head-left-content .course-des {
+        display: block;
+        float:left;
+        text-align: left;
+        font-size: 2em;
+        font-weight: 600;
+        
+    }
+
+.pg-head-right-content {
+    float: left;
+}
+.btn-enroll {
+    margin: 25px 25px;
+    width: 70%;
+    font-size: 1.5em;
+    font-weight: bold;
+}

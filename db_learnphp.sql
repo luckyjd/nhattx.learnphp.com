@@ -7,8 +7,8 @@ CREATE TABLE IF NOT EXISTS learnphp_tinhvan.subject (
 
 CREATE TABLE IF NOT EXISTS learnphp_tinhvan.instructor (
    id int UNSIGNED AUTO_INCREMENT NOT NULL,
-   name varchar(30)  NOT NULL,
-   university varchar(30)  NOT NULL,
+   name varchar(50)  NOT NULL,
+   university varchar(100)  NOT NULL,
    url_img varchar(128)  NULL,
    description text  NOT NULL,
    CONSTRAINT instructor_pk PRIMARY KEY (id)
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS learnphp_tinhvan.instructor (
 
 CREATE TABLE IF NOT EXISTS learnphp_tinhvan.course (
    id int UNSIGNED AUTO_INCREMENT NOT NULL,
-   name varchar(50)  NOT NULL,
+   name varchar(500)  NOT NULL,
    description text  NOT NULL,
    subject_id int UNSIGNED NOT NULL,
    url_img varchar(1000)  NULL,

@@ -22,7 +22,9 @@
     
     <div class="pg-container">
     <?php include '../include/navigation.php';?>
-    <?php echo "course detail id = " . $_GET['q']; ?>
+    <?php include '../include/detail.php'; 
+        show_detail($_GET['q']);
+    ?>
     <?php include '../include/footer.html';?>
     </div>
     <!--#container-->
